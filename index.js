@@ -79,6 +79,8 @@ function handleTip() {
     tipPercentValue = 0.05;
   } else if (optionTip10.checked === true) {
     tipPercentValue = 0.1;
+    console.log("TRUE CHECKED");
+    console.log(tipPercentValue);
   } else if (optionTip15.checked === true) {
     tipPercentValue = 0.15;
   } else if (optionTip20.checked === true) {
@@ -98,8 +100,10 @@ function handleTip() {
 }
 
 function handleCalculate() {
-  handlePeople();
   handleBill();
+  handlePeople();
+  handleTip();
+
   if (optionTipNone.checked === true) {
     result = parseInt(billValue) / parseInt(peopleValue);
   } else if (
@@ -110,19 +114,14 @@ function handleCalculate() {
     optionTip25.checked === true ||
     optionTip30.checked === true
   ) {
-    totalPlusTip =
-      eval(parseInt(tipPercentValue) * parseInt(billValue)) +
-      parseInt(billValue);
-    result = totalPlusTip / peopleValue;
+    totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
+    result = Number(totalPlusTip / peopleValue);
   } else if (optionTipCustom.checked === true && optionTipType.value === "%") {
-    eval(parseInt(tipPercentValue) * parseInt(billValue)) + parseInt(billValue);
-    result = totalPlusTip / peopleValue;
+    totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
+    result = Number(totalPlusTip / peopleValue);
   } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
-    totalPlusTip = parseInt(billValue) + parseInt();
-    result = totalPlusTip / peopleValue;
+    totalPlusTip = Number(billValue) + Number(tipCashValue);
+    result = Number(totalPlusTip) / peopleValue;
   }
-  console.log("BILL VALUE", parseInt(billValue));
-  console.log("PEOPLE VALUE", parseInt(peopleValue));
-  outCome = result;
-  console.log("OUTCOME", outCome);
+  console.log(result);
 }
