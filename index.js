@@ -2,9 +2,9 @@
 
 // PEOPLE SELECTORS
 
-const option2 = document.getElementById("2-option");
+const OPTION2 = document.getElementById("2-option");
 
-const option3 = document.getElementById("3-option");
+const OPTION3 = document.getElementById("3-option");
 
 const option4 = document.getElementById("4-option");
 
@@ -70,17 +70,17 @@ undefind
 // .addEventListener("click", (event) => {});
 
 const handlePeople = () => {
-  if (option2.checked === true) {
+  if (OPTION2.checked === true) {
     peopleValue = 2;
-  } else if (option3.checked === true) {
+  } else if (OPTION3.checked) {
     peopleValue = 3;
-  } else if (option4.checked === true) {
+  } else if (option4.checked) {
     peopleValue = 4;
-  } else if (option5.checked === true) {
+  } else if (option5.checked) {
     peopleValue = 5;
-  } else if (option6.checked === true) {
+  } else if (option6.checked) {
     peopleValue = 6;
-  } else if (optionCustom.checked === true) {
+  } else if (optionCustom.checked) {
     peopleValue = inputCustom.value;
   } else {
     outCome = "";
