@@ -18,10 +18,13 @@ BillSplitX will allow users to choose between radio buttons or input for choosin
 
 ### ToDo List:
 
-- [ ] Create Basic HTML
-- [ ] Wireframe App in README
-- [ ] Create Selectors
-- [ ] Finish People Function - w/ buttons
-- [ ] Finish Total Function
+- [x] Create Basic HTML
+- [x] Wireframe App in README
+- [x] Create Selectors
+- [x] Finish People Function - w/ buttons
+- [x] Finish Total Function
 - [ ] Finish Tip Function
-- [ ] Add Splitting Algs
+- [x] Add Splitting Algs
+- [ ] Make sure Inputs are Numbers
+- [ ] Do some Styling to the container
+- [ ] Style Buttons

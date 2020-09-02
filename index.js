@@ -117,8 +117,8 @@ function handleCalculate() {
   } else if (optionTipCustom.checked === true && optionTipType.value === "%") {
     eval(parseInt(tipPercentValue) * parseInt(billValue)) + parseInt(billValue);
     result = totalPlusTip / peopleValue;
-  } else if (optionTipCustom.checked === true && optionTipType.value === "%") {
-    eval(parseInt(tipPercentValue) * parseInt(billValue)) + parseInt(billValue);
+  } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+    totalPlusTip = parseInt(billValue) + parseInt();
     result = totalPlusTip / peopleValue;
   }
   console.log("BILL VALUE", parseInt(billValue));
