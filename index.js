@@ -36,6 +36,10 @@ const tipCustomInput = document.getElementById("custom-tip-value");
 
 const calcBtn = document.getElementById("calculate-btn");
 
+// OUTPUT SELECTOR
+
+const output = document.getElementById("output");
+
 // GLOBALS
 
 let peopleValue = "";
@@ -105,7 +109,7 @@ function handleCalculate() {
   handleTip();
 
   if (optionTipNone.checked === true) {
-    result = parseInt(billValue) / parseInt(peopleValue);
+    result = Number(billValue) / Number(peopleValue);
   } else if (
     optionTip5.checked === true ||
     optionTip10.checked === true ||
@@ -121,7 +125,35 @@ function handleCalculate() {
     result = Number(totalPlusTip / peopleValue);
   } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
     totalPlusTip = Number(billValue) + Number(tipCashValue);
-    result = Number(totalPlusTip) / peopleValue;
+    result = Number(totalPlusTip) / Number(peopleValue);
   }
-  console.log(result);
+  if (
+    optionTip5.checked === true ||
+    optionTip10.checked === true ||
+    optionTip15.checked === true ||
+    optionTip20.checked === true ||
+    optionTip25.checked === true ||
+    optionTip30.checked === true ||
+    (optionTipCustom.checked === true && optionTipType.value === "%")
+  ) {
+    output.innerText =
+      "The split cost for " +
+      peopleValue +
+      " People" +
+      " with a %" +
+      Number(tipPercentValue) * 100 +
+      " tip is $" +
+      result +
+      " Each";
+  } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+    output.innerText =
+      "The split cost for " +
+      peopleValue +
+      " People" +
+      " with a $" +
+      Number(tipCashValue) +
+      " tip is $" +
+      result +
+      " Each";
+  }
 }
