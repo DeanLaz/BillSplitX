@@ -23,8 +23,10 @@ BillSplitX will allow users to choose between radio buttons or input for choosin
 - [x] Create Selectors
 - [x] Finish People Function - w/ buttons
 - [x] Finish Total Function
-- [ ] Finish Tip Function
+- [x] Finish Tip Function
 - [x] Add Splitting Algs
+- [ ] Reset App Function
+- [ ] Output Results
 - [ ] Make sure Inputs are Numbers
 - [ ] Do some Styling to the container
 - [ ] Style Buttons
