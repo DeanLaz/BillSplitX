@@ -32,6 +32,9 @@ const optionTipCustom = document.getElementById("custom-tip-option");
 const optionTipType = document.getElementById("custom-tip-option-type");
 const tipCustomInput = document.getElementById("custom-tip-value");
 
+const TIP_OPT_DIV = document.querySelectorAll(".tip-selector-option");
+const TIP_OPT_RADIO = document.querySelectorAll(".tip-selector");
+
 // CALCULATE SELECTOR
 
 const calcBtn = document.getElementById("calculate-btn");
@@ -50,7 +53,23 @@ let outCome = "";
 let result = "";
 let totalPlusTip = "";
 
-function handlePeople() {
+// Add onclikc event to tip-selector-option class
+// console.log(TIP_OPT_DIV);
+
+/*
+
+0 = false;
+1 = true;
+3847239847234 = true;
+[] = false;
+{} = false;
+undefind
+
+*/
+
+// .addEventListener("click", (event) => {});
+
+const handlePeople = () => {
   if (option2.checked === true) {
     peopleValue = 2;
   } else if (option3.checked === true) {
@@ -66,7 +85,7 @@ function handlePeople() {
   } else {
     outCome = "";
   }
-}
+};
 
 function handleBill() {
   if (inputBill.value === "") {
@@ -76,65 +95,78 @@ function handleBill() {
   }
 }
 
-function handleTip() {
-  if (optionTipNone.checked === true) {
-    tipCashValue = 0;
-  } else if (optionTip5.checked === true) {
-    tipPercentValue = 0.05;
-  } else if (optionTip10.checked === true) {
-    tipPercentValue = 0.1;
-    console.log("TRUE CHECKED");
-    console.log(tipPercentValue);
-  } else if (optionTip15.checked === true) {
-    tipPercentValue = 0.15;
-  } else if (optionTip20.checked === true) {
-    tipPercentValue = 0.2;
-  } else if (optionTip25.checked === true) {
-    tipPercentValue = 0.25;
-  } else if (optionTip30.checked === true) {
-    tipPercentValue = 0.3;
-  } else if (optionTipCustom.checked === true && optionTipType.value === "%") {
-    let inputPercent = tipCustomInput.value / 100;
-    tipPercentValue = inputPercent;
-  } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+TIP_OPT_RADIO.forEach((option) => {
+  option.addEventListener("change", (event) => {
+    console.log(event.target.value);
+    // event.target.value === 0
+    if (event.target.value === 0 || event.target.value) {
+      // event.target.value has something inside it
+      // Check if that value === 'input'
+      if (event.target.value === "input") {
+        optionTipType.removeAttribute("disabled");
+        tipCustomInput.removeAttribute("disabled");
+        handleTipTypeChange();
+      } else {
+        // if we clicked on premade tip values
+        tipPercentValue = event.target.value / 100;
+        console.log(peopleValue);
+        tipCashValue = "";
+        tipCustomInput.disabled = true;
+        optionTipType.disabled = true;
+        tipCustomInput.value = "";
+        optionTipType.value = "%";
+      }
+    }
+  });
+});
+const handleTipTypeChange = () => {
+  if (optionTipType.value === "%") {
+    tipPercentValue = tipCustomInput.value / 100;
+    tipCashValue = "";
+  } else if (optionTipType.value === "$") {
     tipCashValue = tipCustomInput.value;
-  } else {
-    tipCashValue = 0;
+    tipPercentValue = "";
   }
-}
+};
+
+tipCustomInput.addEventListener("change", (event) => {
+  handleTipTypeChange();
+});
+optionTipType.addEventListener("change", (event) => {
+  handleTipTypeChange();
+});
 
 function handleCalculate() {
   handleBill();
   handlePeople();
-  handleTip();
 
-  if (optionTipNone.checked === true) {
+  if (optionTipNone.checked) {
     result = Number(billValue) / Number(peopleValue);
   } else if (
-    optionTip5.checked === true ||
-    optionTip10.checked === true ||
-    optionTip15.checked === true ||
-    optionTip20.checked === true ||
-    optionTip25.checked === true ||
-    optionTip30.checked === true
+    optionTip5.checked ||
+    optionTip10.checked ||
+    optionTip15.checked ||
+    optionTip20.checked ||
+    optionTip25.checked ||
+    optionTip30.checked
   ) {
     totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
     result = Number(totalPlusTip / peopleValue);
-  } else if (optionTipCustom.checked === true && optionTipType.value === "%") {
+  } else if (optionTipCustom.checked && optionTipType.value === "%") {
     totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
     result = Number(totalPlusTip / peopleValue);
-  } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+  } else if (optionTipCustom.checked && optionTipType.value === "$") {
     totalPlusTip = Number(billValue) + Number(tipCashValue);
     result = Number(totalPlusTip) / Number(peopleValue);
   }
   if (
-    optionTip5.checked === true ||
-    optionTip10.checked === true ||
-    optionTip15.checked === true ||
-    optionTip20.checked === true ||
-    optionTip25.checked === true ||
-    optionTip30.checked === true ||
-    (optionTipCustom.checked === true && optionTipType.value === "%")
+    optionTip5.checked ||
+    optionTip10.checked ||
+    optionTip15.checked ||
+    optionTip20.checked ||
+    optionTip25.checked ||
+    optionTip30.checked ||
+    (optionTipCustom.checked && optionTipType.value === "%")
   ) {
     output.innerText =
       "The split cost for " +
@@ -145,7 +177,7 @@ function handleCalculate() {
       " tip is $" +
       result +
       " Each";
-  } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+  } else if (optionTipCustom.checked && optionTipType.value === "$") {
     output.innerText =
       "The split cost for " +
       peopleValue +
@@ -157,3 +189,29 @@ function handleCalculate() {
       " Each";
   }
 }
+
+// function handleTip() {
+// if (optionTipNone.checked === true) {
+//   tipCashValue = 0;
+// } else if (optionTip5.checked === true) {
+//   tipPercentValue = 0.05;
+// } else if (optionTip10.checked === true) {
+//   tipPercentValue = 0.1;
+//   console.log("TRUE CHECKED");
+//   console.log(tipPercentValue);
+// } else if (optionTip15.checked === true) {
+//   tipPercentValue = 0.15;
+// } else if (optionTip20.checked === true) {
+//   tipPercentValue = 0.2;
+// } else if (optionTip25.checked === true) {
+//   tipPercentValue = 0.25;
+// } else if (optionTip30.checked === true) {
+//   tipPercentValue = 0.3;
+// }
+//   if (optionTipCustom.checked === true && optionTipType.value === "%") {
+//     let inputPercent = tipCustomInput.value / 100;
+//     tipPercentValue = inputPercent;
+//   } else if (optionTipCustom.checked === true && optionTipType.value === "$") {
+//     tipCashValue = tipCustomInput.value;
+//   }
+// }
