@@ -3,18 +3,13 @@
 // PEOPLE SELECTORS
 
 const OPTION2 = document.getElementById("2-option");
-
 const OPTION3 = document.getElementById("3-option");
-
 const OPTION4 = document.getElementById("4-option");
-
 const OPTION5 = document.getElementById("5-option");
-
 const OPTION6 = document.getElementById("6-option");
-
 const OPTION_CUSTOM = document.getElementById("input-option");
-
 const INPUT_CUSTOM = document.getElementById("input-people-value-field");
+const PEOPLE_OPT_RADIO = document.querySelectorAll(".people-selector-option");
 
 // BILL SELECTORS
 
@@ -31,7 +26,6 @@ const TIP_OPTION30 = document.getElementById("30%-option");
 const TIP_OPTION_CUSTOM = document.getElementById("custom-tip-option");
 const TIP_OPTION_TYPE = document.getElementById("custom-tip-option-type");
 const TIP_CUSTOM_INPUT = document.getElementById("custom-tip-value");
-
 const TIP_OPT_DIV = document.querySelectorAll(".tip-selector-option");
 const TIP_OPT_RADIO = document.querySelectorAll(".tip-selector");
 
@@ -41,7 +35,7 @@ const CALC_BTN = document.getElementById("calculate-btn");
 
 // OUTPUT SELECTOR
 
-const OUTPUT = document.getElementById("OUTPUT");
+const OUTPUT = document.getElementById("output");
 
 // GLOBALS
 
@@ -53,25 +47,7 @@ let outCome = "";
 let result = "";
 let totalPlusTip = "";
 
-// .addEventListener("click", (event) => {});
-
-const handlePeople = () => {
-  if (OPTION2.checked === true) {
-    peopleValue = 2;
-  } else if (OPTION3.checked) {
-    peopleValue = 3;
-  } else if (OPTION4.checked) {
-    peopleValue = 4;
-  } else if (OPTION5.checked) {
-    peopleValue = 5;
-  } else if (OPTION6.checked) {
-    peopleValue = 6;
-  } else if (OPTION_CUSTOM.checked) {
-    peopleValue = INPUT_CUSTOM.value;
-  } else {
-    outCome = "";
-  }
-};
+// FUNCTIONS
 
 const handleBill = () => {
   if (INPUT_TOTAL.value === "") {
@@ -81,19 +57,34 @@ const handleBill = () => {
   }
 };
 
+PEOPLE_OPT_RADIO.forEach((option) => {
+  option.addEventListener("click", (event) => {
+    if (event.target.value) {
+      if (event.target.value === "custom-people-option") {
+        INPUT_CUSTOM.removeAttribute("disabled");
+        peopleValue = INPUT_CUSTOM.value;
+      } else {
+        peopleValue = event.target.value;
+        INPUT_CUSTOM.disabled = true;
+        INPUT_CUSTOM.value = "";
+      }
+    }
+  });
+});
+
+INPUT_CUSTOM.addEventListener("change", (event) => {
+  peopleValue = INPUT_CUSTOM.value;
+});
+
 TIP_OPT_RADIO.forEach((option) => {
   option.addEventListener("change", (event) => {
     console.log(event.target.value);
-    // event.target.value === 0
     if (event.target.value === 0 || event.target.value) {
-      // event.target.value has something inside it
-      // Check if that value === 'input'
       if (event.target.value === "input") {
         TIP_OPTION_TYPE.removeAttribute("disabled");
         TIP_CUSTOM_INPUT.removeAttribute("disabled");
         handleTipTypeChange();
       } else {
-        // if we clicked on premade tip values
         tipPercentValue = event.target.value / 100;
         console.log(peopleValue);
         tipCashValue = "";
@@ -124,7 +115,6 @@ TIP_OPTION_TYPE.addEventListener("change", (event) => {
 
 const handleCalculate = () => {
   handleBill();
-  handlePeople();
 
   if (TIP_OPTION_NONE.checked) {
     result = Number(billValue) / Number(peopleValue);
@@ -138,10 +128,10 @@ const handleCalculate = () => {
   ) {
     totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
     result = Number(totalPlusTip / peopleValue);
-  } else if (TIP_OPTIONCUSTOM.checked && TIP_OPTION_TYPE.value === "%") {
+  } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%") {
     totalPlusTip = Number(billValue) + Number(tipPercentValue * billValue);
     result = Number(totalPlusTip / peopleValue);
-  } else if (TIP_OPTIONCUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
+  } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
     totalPlusTip = Number(billValue) + Number(tipCashValue);
     result = Number(totalPlusTip) / Number(peopleValue);
   }
@@ -152,7 +142,7 @@ const handleCalculate = () => {
     TIP_OPTION20.checked ||
     TIP_OPTION25.checked ||
     TIP_OPTION30.checked ||
-    (TIP_OPTIONCUSTOM.checked && TIP_OPTION_TYPE.value === "%")
+    (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%")
   ) {
     OUTPUT.innerText =
       "The split cost for " +
@@ -163,7 +153,7 @@ const handleCalculate = () => {
       " tip is $" +
       result +
       " Each";
-  } else if (TIP_OPTIONCUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
+  } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
     OUTPUT.innerText =
       "The split cost for " +
       peopleValue +
@@ -199,5 +189,4 @@ const handleCalculate = () => {
 //     tipPercentValue = inputPercent;
 //   } else if (TIP_OPTIONCUSTOM.checked === true && TIP_OPTION_TYPE.value === "$") {
 //     tipCashValue = TIP_CUSTOM_INPUT.value;
-//   }
-// }
+//
