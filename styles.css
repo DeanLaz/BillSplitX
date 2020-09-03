@@ -1,11 +1,13 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
 html {
   font-family: "Montserrat", sans-serif;
   height: 100%;
   background-color: rgb(0, 107, 121);
   background-image: linear-gradient(
     0deg,
-    rgb(0, 107, 121) 0%,
-    rgb(0, 0, 0) 100%
+    rgb(191, 192, 255) 0%,
+    rgb(255, 255, 255) 100%
   );
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -14,21 +16,64 @@ html {
   background-size: cover;
   color: white;
 }
+.header {
+  display: flex;
+  align-items: center;
+}
 h1 {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(0, 61, 97);
+  text-align: left;
+  font-size: 3rem;
+  padding-left: 20rem;
+}
+h2 {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(0, 61, 97);
+  text-align: right;
+  font-size: 2rem;
+  padding-left: 30rem;
+  /* padding-right: 20rem; */
+}
+h3 {
+  font-family: "Montserrat", sans-serif;
   color: white;
   text-align: center;
+  font-size: 2rem;
 }
 .bill-split-container {
-  border: 1px solid rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  border: 3px solid rgba(22, 239, 255, 0.144);
+  background-color: rgb(0, 107, 121);
+  background-image: linear-gradient(
+    0deg,
+    rgb(0, 95, 173) 0%,
+    rgb(0, 100, 131) 100%
+  );
   border-radius: 5px;
   position: absolute;
   top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 60%;
   height: 60%;
+  padding: 2rem;
+}
+.bill-value {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+.bill-value label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+}
+.bill-value input {
+  font-family: "Montserrat", sans-serif;
+  width: 30rem;
+  height: 2rem;
 }
 #people-selector {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   display: flex;
   flex-grow: 1;
@@ -36,11 +81,12 @@ h1 {
   font-size: 1.3rem;
 }
 #people-selector label {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   padding: 1px;
-  border: solid 1px rgb(255, 220, 123);
-  background-color: rgb(255, 229, 172);
-  margin: 0;
+  border: solid 1px rgb(0, 57, 143);
+  background-color: rgb(0, 57, 131);
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,21 +94,25 @@ h1 {
 }
 
 #people-selector input[type="radio"] {
+  font-family: "Montserrat", sans-serif;
   display: none;
 }
 
 #people-selector input[type="radio"]:hover + label {
+  font-family: "Montserrat", sans-serif;
   background-color: rgb(255, 182, 87);
   border: solid 1px rgb(255, 211, 89);
   color: white;
 }
 
 #people-selector input[type="radio"]:checked + label {
+  font-family: "Montserrat", sans-serif;
   background-color: rgb(255, 145, 0);
   border: solid 1px rgb(255, 205, 67);
   color: white;
 }
 #people-selector-custom-option {
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   display: flex;
   flex-grow: 1;
@@ -70,17 +120,19 @@ h1 {
   font-size: 1.3rem;
 }
 #people-selector-custom-option label {
+  font-family: "Montserrat", sans-serif;
   width: 30%;
   padding: 1px;
-  border: solid 1px rgb(255, 220, 123);
-  background-color: rgb(255, 229, 172);
-  margin: 0;
+  border: solid 1px rgb(0, 57, 143);
+  background-color: rgb(0, 57, 131);
+  margin: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: ease 1s;
 }
 #people-selector-custom-option input[type="radio"]:hover + label {
+  font-family: "Montserrat", sans-serif;
   background-color: rgb(255, 182, 87);
   border: solid 1px rgb(255, 211, 89);
   color: white;
@@ -88,13 +140,17 @@ h1 {
 #people-selector-custom-option input[type="radio"]:checked + label {
   background-color: rgb(255, 145, 0);
   border: solid 1px rgb(255, 205, 67);
-  color: white;
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
 }
 #people-selector-custom-option input[type="radio"] {
+  font-family: "Montserrat", sans-serif;
   display: none;
 }
 #input-people-value-field {
+  font-family: "Montserrat", sans-serif;
   width: 70%;
+  margin: 10px;
 }
 /* .tip-selector-div {
   display: inline;
