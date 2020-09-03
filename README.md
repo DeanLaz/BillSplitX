@@ -26,7 +26,12 @@ BillSplitX will allow users to choose between radio buttons or input for choosin
 - [x] Finish Tip Function
 - [x] Add Splitting Algs
 - [x] Output Results
-- [ ] Make sure Inputs are Numbers
-- [ ] Do some Styling to the container
-- [ ] Style Output
-- [ ] Style Buttons
+- [x] Make sure Inputs are Numbers
+- [ ] Reset Button
+- [ ] Do some styling to the container
+- [ ] Start Styling Radios
+- [ ] Make Output Popup on Calc,
+      Add X & RECALCULATE buttons w/ Create and Remove Element functions
+- [ ] Finish Radios
+- [ ] Finish CSS Background
+- [ ] Add Red Background to Inputs if the field is empty.
