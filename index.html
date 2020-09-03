@@ -19,41 +19,72 @@
         <div class="bill-header">
           <h3><i class="fa fa-dollar-sign"></i> What the Bill Total?</h3>
         </div>
+        <label class="bill-input" for="people-option">TOTAL: $</label>
         <input
-          type="text"
-          placeholder="$"
+          type="number"
+          placeholder="Bill Total"
           id="input-bill-value-field"
           name="account-selector"
-          value=""
+          value="billinput"
         />
-        <label class="bill-input" for="people-option">BILL AMOUNT</label>
       </div>
       <div class="people-value" id="people-value">
         <div class="people-header">
           <h3><i class="fa fa-users"></i> How many People?</h3>
         </div>
         <div id="people-selector">
-          <input type="radio" name="people-option" id="2-option" value="2" />
+          <input
+            class="people-selector-option"
+            type="radio"
+            name="people-option"
+            id="2-option"
+            value="2"
+          />
           <label class="container" for="people-option"> 2 </label>
-          <input type="radio" name="people-option" id="3-option" value="3" />
+          <input
+            class="people-selector-option"
+            type="radio"
+            name="people-option"
+            id="3-option"
+            value="3"
+          />
           <label class="container" for="people-option">3 </label>
-          <input type="radio" name="people-option" id="4-option" value="4" />
+          <input
+            class="people-selector-option"
+            type="radio"
+            name="people-option"
+            id="4-option"
+            value="4"
+          />
           <label class="container" for="people-option">4 </label>
-          <input type="radio" name="people-option" id="5-option" value="5" />
+          <input
+            class="people-selector-option"
+            type="radio"
+            name="people-option"
+            id="5-option"
+            value="5"
+          />
           <label class="container" for="people-option">5 </label>
-          <input type="radio" name="people-option" id="6-option" value="6" />
+          <input
+            class="people-selector-option"
+            type="radio"
+            name="people-option"
+            id="6-option"
+            value="6"
+          />
           <label class="container" for="people-option">6 </label>
           <br />
           <input
+            class="people-selector-option"
             type="radio"
             name="people-option"
             id="input-option"
-            value="input"
+            value="custom-people-option"
             checked="checked"
           />
-          <label class="container" for="people-option">Custom</label>
+          <label class="container" for="people-option">CUSTOM</label>
           <input
-            type="text"
+            type="number"
             placeholder="# of People"
             id="input-people-value-field"
             name="people-option-input"
@@ -66,99 +97,99 @@
           <h3><i class="fas fa-hands"></i> Add a Tip</h3>
         </div>
         <div id="tip-selector">
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="no-tip-option"
-              value="0"
-            />
-            <label class="container" for="tip-option">None</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="5%-option"
-              value="5"
-            />
-            <label class="container" for="tip-option">5%</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="10%-option"
-              value="10"
-            />
-            <label class="container" for="people-option">10%</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="15%-option"
-              value="15"
-            />
-            <label class="container" for="people-option">15%</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="20%-option"
-              value="20"
-            />
-            <label class="container" for="people-option">20%</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="25%-option"
-              value="25"
-            />
-            <label class="container" for="people-option">25%</label>
-          </div>
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="30%-option"
-              value="30"
-            />
-            <label class="container" for="tip-option">30%</label>
-          </div>
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="no-tip-option"
+            value="0"
+          />
+          <label class="container" for="tip-option">0%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="5%-option"
+            value="5"
+          />
+          <label class="container" for="tip-option">5%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="10%-option"
+            value="10"
+          />
+          <label class="container" for="people-option">10%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="15%-option"
+            value="15"
+          />
+          <label class="container" for="people-option">15%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="20%-option"
+            value="20"
+          />
+          <label class="container" for="people-option">20%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="25%-option"
+            value="25"
+          />
+          <label class="container" for="people-option">25%</label>
+          <!-- </div> -->
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="30%-option"
+            value="30"
+          />
+          <label class="container" for="tip-option">30%</label>
+          <!-- </div> -->
           <br />
-          <div class="tip-selector-option">
-            <input
-              type="radio"
-              class="tip-selector"
-              name="tip-option"
-              id="custom-tip-option"
-              value="input"
-              checked="checked"
-            />
-            <label class="container" for="tip-option">Custom Tip</label>
-            <select name="tip-custom-option" id="custom-tip-option-type">
-              <option value="%">%</option>
-              <option value="$">$</option>
-            </select>
-            <input
-              type="text"
-              placeholder="Tip Amount"
-              id="custom-tip-value"
-              name="people-option-input"
-              value=""
-            />
-          </div>
+          <!-- <div class="tip-selector-option"> -->
+          <input
+            type="radio"
+            class="tip-selector"
+            name="tip-option"
+            id="custom-tip-option"
+            value="input"
+            checked="checked"
+          />
+          <label class="container" for="tip-option">CUSTOM</label>
+          <select name="tip-custom-option" id="custom-tip-option-type">
+            <option value="%">%</option>
+            <option value="$">$</option>
+          </select>
+          <input
+            type="number"
+            placeholder="Tip Amount"
+            id="custom-tip-value"
+            name="people-option-input"
+            value=""
+          />
+          <!-- </div> -->
         </div>
       </div>
       <div class="calculate">
