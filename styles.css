@@ -19,5 +19,82 @@ h1 {
   text-align: center;
 }
 .bill-split-container {
-  text-align: center;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  height: 60%;
 }
+#people-selector {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.3rem;
+}
+#people-selector label {
+  width: 100%;
+  padding: 1px;
+  border: solid 1px rgb(255, 220, 123);
+  background-color: rgb(255, 229, 172);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#people-selector input[type="radio"] {
+  /* width: 100%;
+  padding: 1px;
+  border: solid 1px rgb(255, 220, 123);
+  background-color: rgb(255, 229, 172);
+  margin: 0;
+  justify-content: center;
+  align-items: center; */
+  display: none;
+}
+
+#people-selector input[type="radio"]:checked + label {
+  background-color: rgb(255, 145, 0);
+  border: solid 1px rgb(255, 205, 67);
+  color: white;
+}
+#people-selector-custom-option {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  text-align: center;
+  font-size: 1.3rem;
+}
+#people-selector-custom-option label {
+  width: 30%;
+  padding: 1px;
+  border: solid 1px rgb(255, 220, 123);
+  background-color: rgb(255, 229, 172);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#people-selector-custom-option input[type="radio"] {
+  display: none;
+}
+
+#people-selector-custom-option input[type="radio"]:checked + label {
+  background-color: rgb(255, 145, 0);
+  border: solid 1px rgb(255, 205, 67);
+  color: white;
+}
+#input-people-value-field {
+  width: 70%;
+}
+/* .tip-selector-div {
+  display: inline;
+}
+.tip-value {
+  display: inline-block;
+} */
