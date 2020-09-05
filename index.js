@@ -33,6 +33,10 @@ const TIP_OPT_RADIO = document.querySelectorAll(".tip-selector");
 
 const CALC_BTN = document.getElementById("calculate-btn");
 
+// RESET SELECTOR
+
+const RESET_BTN = document.getElementById("reset-btn");
+
 // OUTPUT SELECTOR
 
 const OUTPUT = document.getElementById("output");
@@ -48,7 +52,6 @@ let result = "";
 let totalPlusTip = "";
 
 // FUNCTIONS
-
 const handleBill = () => {
   if (INPUT_TOTAL.value === "") {
     INPUT_TOTAL.value = "Enter Bill Amount";
@@ -145,7 +148,9 @@ const handleCalculate = () => {
     (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%")
   ) {
     OUTPUT.innerText =
-      "The split cost for " +
+      "The split of $" +
+      billValue +
+      " for " +
       peopleValue +
       " People" +
       " with a %" +
@@ -155,7 +160,9 @@ const handleCalculate = () => {
       " Each";
   } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
     OUTPUT.innerText =
-      "The split cost for " +
+      "The split of $" +
+      billValue +
+      " for " +
       peopleValue +
       " People" +
       " with a $" +
