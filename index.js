@@ -108,13 +108,52 @@ const handleTipTypeChange = () => {
     tipPercentValue = "";
   }
 };
-
 TIP_CUSTOM_INPUT.addEventListener("change", (event) => {
   handleTipTypeChange();
 });
 TIP_OPTION_TYPE.addEventListener("change", (event) => {
   handleTipTypeChange();
 });
+
+const handleOutput = () => {
+  // SLICE RESULT TO 5 LETTERS SET IT TO OUTPUT
+  let output = result.toString().split("").slice(0, 5).join("");
+  // TURN OUTPUT BACK TO BUMBER
+  Number(output);
+  if (
+    TIP_OPTION5.checked ||
+    TIP_OPTION10.checked ||
+    TIP_OPTION15.checked ||
+    TIP_OPTION20.checked ||
+    TIP_OPTION25.checked ||
+    TIP_OPTION30.checked ||
+    (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%")
+  ) {
+    OUTPUT.innerText =
+      "The split of $" +
+      billValue +
+      " for " +
+      peopleValue +
+      " People" +
+      " with a %" +
+      Number(tipPercentValue) * 100 +
+      " tip is $" +
+      output +
+      " Each";
+  } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
+    OUTPUT.innerText =
+      "The split of $" +
+      billValue +
+      " for " +
+      peopleValue +
+      " People" +
+      " with a $" +
+      Number(tipCashValue) +
+      " tip is $" +
+      output +
+      " Each";
+  }
+};
 
 const handleCalculate = () => {
   handleBill();
@@ -138,39 +177,7 @@ const handleCalculate = () => {
     totalPlusTip = Number(billValue) + Number(tipCashValue);
     result = Number(totalPlusTip) / Number(peopleValue);
   }
-  if (
-    TIP_OPTION5.checked ||
-    TIP_OPTION10.checked ||
-    TIP_OPTION15.checked ||
-    TIP_OPTION20.checked ||
-    TIP_OPTION25.checked ||
-    TIP_OPTION30.checked ||
-    (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%")
-  ) {
-    OUTPUT.innerText =
-      "The split of $" +
-      billValue +
-      " for " +
-      peopleValue +
-      " People" +
-      " with a %" +
-      Number(tipPercentValue) * 100 +
-      " tip is $" +
-      result +
-      " Each";
-  } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
-    OUTPUT.innerText =
-      "The split of $" +
-      billValue +
-      " for " +
-      peopleValue +
-      " People" +
-      " with a $" +
-      Number(tipCashValue) +
-      " tip is $" +
-      result +
-      " Each";
-  }
+  handleOutput();
 };
 
 RESET_BTN.addEventListener("click", () => {
@@ -180,6 +187,7 @@ RESET_BTN.addEventListener("click", () => {
   OUTPUT.innerText = "";
   console.log("pressed");
 });
+
 // function handleTip() {
 // if (TIP_OPTION_NONE.checked === true) {
 //   tipCashValue = 0;
