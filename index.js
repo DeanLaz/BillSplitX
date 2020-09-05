@@ -25,7 +25,7 @@ const TIP_OPTION25 = document.getElementById("25%-option");
 const TIP_OPTION30 = document.getElementById("30%-option");
 const TIP_OPTION_CUSTOM = document.getElementById("custom-tip-option");
 const TIP_OPTION_TYPE = document.getElementById("custom-tip-option-type");
-const TIP_CUSTOM_INPUT = document.getElementById("custom-tip-value");
+const TIP_CUSTOM_INPUT = document.getElementById("input-tip-value-field");
 const TIP_OPT_DIV = document.querySelectorAll(".tip-selector-option");
 const TIP_OPT_RADIO = document.querySelectorAll(".tip-selector");
 
