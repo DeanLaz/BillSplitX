@@ -173,6 +173,13 @@ const handleCalculate = () => {
   }
 };
 
+RESET_BTN.addEventListener("click", () => {
+  INPUT_TOTAL.value = "";
+  INPUT_CUSTOM.value = "";
+  TIP_CUSTOM_INPUT.value = "";
+  OUTPUT.innerText = "";
+  console.log("pressed");
+});
 // function handleTip() {
 // if (TIP_OPTION_NONE.checked === true) {
 //   tipCashValue = 0;
