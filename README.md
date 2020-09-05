@@ -28,10 +28,14 @@ BillSplitX will allow users to choose between radio buttons or input for choosin
 - [x] Output Results
 - [x] Make sure Inputs are Numbers
 - [ ] Reset Button
-- [ ] Use Flex for container
-- [ ] Start Styling Radios
-- [ ] Make Output Popup on Calc,
-      Add X & RECALCULATE buttons w/ Create and Remove Element functions
-- [ ] Finish Radios
+- [ ] Clear Values on Calculate
+- [ ] Align Reset button Left
+- [ ] Use Flex for entire app
+- [x] Start Styling Radios
+- [ ] Send error on handleOutput if BillValue, People Value (if checked), & Tip Value (if checked) is empty
+- [x] Finish Radios
+- [ ] Finish styling reset and calc hover
 - [ ] Finish CSS Background
 - [ ] Add Red Background to Inputs if the field is empty.
+- [ ] Make Output Popup on Calc,
+      Add X & RECALCULATE buttons w/ Create and Remove Element functions
