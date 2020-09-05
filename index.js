@@ -82,7 +82,7 @@ INPUT_CUSTOM.addEventListener("change", (event) => {
 TIP_OPT_RADIO.forEach((option) => {
   option.addEventListener("change", (event) => {
     console.log(event.target.value);
-    if (event.target.value === 0 || event.target.value) {
+    if (event.target.value == 0 || event.target.value) {
       if (event.target.value === "input") {
         TIP_OPTION_TYPE.removeAttribute("disabled");
         TIP_CUSTOM_INPUT.removeAttribute("disabled");
@@ -121,6 +121,7 @@ const handleOutput = () => {
   // TURN OUTPUT BACK TO BUMBER
   Number(output);
   if (
+    TIP_OPTION_NONE.checked ||
     TIP_OPTION5.checked ||
     TIP_OPTION10.checked ||
     TIP_OPTION15.checked ||
