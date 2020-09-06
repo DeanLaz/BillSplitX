@@ -121,6 +121,13 @@ const handleOutput = () => {
   // TURN OUTPUT BACK TO BUMBER
   Number(output);
   if (
+    INPUT_TOTAL.value == "" ||
+    (OPTION_CUSTOM.checked && INPUT_CUSTOM.value == "") ||
+    (TIP_OPTION_CUSTOM.checked && TIP_CUSTOM_INPUT.value == "")
+  ) {
+    console.log("TRUE");
+    OUTPUT.innerText = "Missing Inputs";
+  } else if (
     TIP_OPTION_NONE.checked ||
     TIP_OPTION5.checked ||
     TIP_OPTION10.checked ||
@@ -186,6 +193,13 @@ RESET_BTN.addEventListener("click", () => {
   INPUT_CUSTOM.value = "";
   TIP_CUSTOM_INPUT.value = "";
   OUTPUT.innerText = "";
+  peopleValue = "";
+  billValue = "";
+  tipPercentValue = "";
+  tipCashValue = "";
+  outCome = "";
+  result = "";
+  totalPlusTip = "";
   console.log("pressed");
 });
 
