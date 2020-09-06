@@ -138,7 +138,7 @@ const handleOutput = () => {
     (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "%")
   ) {
     OUTPUT.innerText =
-      "The split of $" +
+      "The split cost of $" +
       billValue +
       " for " +
       peopleValue +
@@ -150,7 +150,7 @@ const handleOutput = () => {
       " Each";
   } else if (TIP_OPTION_CUSTOM.checked && TIP_OPTION_TYPE.value === "$") {
     OUTPUT.innerText =
-      "The split of $" +
+      "The split cost of $" +
       billValue +
       " for " +
       peopleValue +
