@@ -5,7 +5,7 @@
 Made by Dean Lazarof -
 Giphy Search Using Giphy API
 
-### Wireframing Strategy
+### Strategy
 
 BillSplitX will allow users to choose between radio buttons or input for choosing specific amount of people/tip percent. For choosing the amount of the bill there will be a specific input.
 
@@ -27,15 +27,16 @@ BillSplitX will allow users to choose between radio buttons or input for choosin
 - [x] Add Splitting Algs
 - [x] Output Results
 - [x] Make sure Inputs are Numbers
-- [ ] Reset Button
-- [ ] Clear Values on Calculate
-- [ ] Align Reset button Left
-- [ ] Use Flex for entire app
+- [x] Reset Button
+- [x] Clear Values on Calculate
+- [x] Align Reset button Left
 - [x] Start Styling Radios
-- [ ] Send error on handleOutput if BillValue, People Value (if checked), & Tip Value (if checked) is empty
+- [x] Send error on handleOutput if BillValue, People Value (if checked), & Tip Value (if checked) is empty
 - [x] Finish Radios
-- [ ] Finish styling reset and calc hover
-- [ ] Finish CSS Background
+- [x] Finish styling reset and calc hover
+- [x] Finish CSS Background
 - [ ] Add Red Background to Inputs if the field is empty.
+- [ ] Use Flex for entire app
 - [ ] Make Output Popup on Calc,
       Add X & RECALCULATE buttons w/ Create and Remove Element functions
+- [ ] Redo CSS colors
