@@ -1,13 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-html {
+body {
   font-family: "Montserrat", sans-serif;
   height: 100%;
-  background-color: rgb(0, 107, 121);
-  background-image: linear-gradient(
+  background: rgb(0, 107, 121);
+  background: linear-gradient(
     0deg,
-    rgb(191, 192, 255) 0%,
-    rgb(255, 255, 255) 100%
+    rgb(133, 135, 255) 0%,
+    rgb(180, 212, 255) 100%
   );
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -15,6 +15,7 @@ html {
   -o-background-size: cover;
   background-size: cover;
   color: white;
+  padding-bottom: 10rem;
 }
 .header {
   display: flex;
@@ -68,6 +69,7 @@ h3 {
   font-family: "Montserrat", sans-serif;
   width: 50%;
   height: 2rem;
+  font-size: 1.2rem;
 }
 #people-selector {
   font-family: "Montserrat", sans-serif;
@@ -240,16 +242,19 @@ h3 {
   width: 20%;
   margin: 10px;
 }
-
+.calculate {
+  margin-bottom: -3rem;
+}
 #calculate-btn {
   font-family: "Montserrat", sans-serif;
   color: rgb(255, 255, 255);
-  border: solid 1px rgb(0, 122, 86);
+  border: solid 1px rgb(255, 255, 255);
   background-color: rgb(0, 114, 70);
   width: 30%;
   margin-top: 2rem;
   padding: 1rem;
   font-size: 1.5rem;
+  transition: ease 1s;
 }
 #reset-btn {
   font-family: "Montserrat", sans-serif;
@@ -260,7 +265,16 @@ h3 {
   margin-top: 2rem;
   padding: 1rem;
   font-size: 1.5rem;
-  justify-items: right;
+  float: right;
+  transition: ease 1s;
+}
+#calculate-btn:hover {
+  background-color: rgb(255, 145, 0);
+  border: solid 1px rgb(255, 205, 67);
+}
+#reset-btn:hover {
+  background-color: rgb(255, 145, 0);
+  border: solid 1px rgb(255, 205, 67);
 }
 .output-container {
   height: 4rem;
@@ -269,7 +283,7 @@ h3 {
 .output {
   padding-top: 2rem;
   text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.7rem;
 }
 /* .tip-selector-div {
   display: inline;
