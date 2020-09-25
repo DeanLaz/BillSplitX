@@ -1,9 +1,6 @@
 # BillSplitX
 
-## What is BillSplitX?
-
-Made by Dean Lazarof -
-Giphy Search Using Giphy API
+Made by Dean Lazarof
 
 ### Strategy
 
